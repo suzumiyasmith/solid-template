@@ -1,7 +1,7 @@
 {
   "name": "solid-template",
   "version": "1.0.0",
-  "description": "A starter template to dev in solidjs (vite + tailwind + daisyui + phosphor)",
+  "description": "A starter template to dev in solidjs (vite + tailwind + daisyui + phosphor + xstate)",
   "scripts": {
     "start": "vite",
     "dev": "vite --host",
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "phosphor-solid": "^1.1.5",
-    "solid-js": "^1.2.6"
+    "solid-js": "^1.2.6",
+    "xstate": "^4.27.0"
   }
 }

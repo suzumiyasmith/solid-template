@@ -1,5 +1,5 @@
 import { render } from "solid-js/web";
-
+import { store, send } from "./store";
 import { Heart } from "phosphor-solid";
 import "./index.css";
 
@@ -13,12 +13,22 @@ const App = () => (
           excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
           id nisi.
         </p>
-        <button
-          class="btn btn-primary"
-          onClick={() => (location.href = "https://www.solidjs.com")}
-        >
-          Get Started <Heart weight="fill" />{" "}
-        </button>
+        <Switch>
+          <Match when={store.context.count <= 10}>
+            <button
+              class="btn btn-primary"
+              onClick={() => send({ type: "INCREMENT" })}
+            >
+              Get Started <Heart weight="fill" />
+              {store.context.count}
+            </button>
+          </Match>
+          <Match when={store.context.count > 10}>
+            <a class="link link-primary" href="https://www.solidjs.com">
+              Go Solidjs
+            </a>
+          </Match>
+        </Switch>
       </div>
     </div>
   </div>
